@@ -1,8 +1,13 @@
 # Project Overview
 
+This is a project aiming at practicing Jasmine test.
+TestingProject/jasmine/spec/feedreader.js is updated according to the project requirement.
 
+# View Page
 
-When you're all finished, write a `README` file detailing all steps required to successfully run the application. If you have added additional tests, provide documentation for what these future features are and what the tests are checking for.
+1. git clone https://github.com/DorisYanyanFan/TestingProject.git
+2. In the folder, open index.html to see the result.
+3. Changes is TestingProject/jasmine/spec/feedreader.js
 
 # Contributing
 
