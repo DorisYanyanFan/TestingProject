@@ -120,39 +120,4 @@ $(function() {
         expect(newFeed).not.toEqual(oldFeed);
       });
     });
-
-    describe('Feed-list', function(){
-
-
-        it(`all feed-list 3 have at least 5 articles`, function(){
-            return new Promise (function(resolve){
-                    loadFeed(3,resolve($('.entry').length));
-                }).then(function(length){
-                    expect(length).not.toBe(0);
-                });
-        });
-        it(`all feed-list 2 have at least 5 articles`, function(){
-            return new Promise (function(resolve){
-                    loadFeed(2,resolve($('.entry').length));
-                }).then(function(length){
-                    expect(length).not.toBe(0);
-                });
-        });
-        it(`all feed-list 1 have at least 5 articles`, function(){
-            return new Promise (function(resolve){
-                    loadFeed(1,resolve($('.entry').length));
-                }).then(function(length){
-                    expect(length).not.toBe(0);
-                });
-        });
-        it(`all feed-list 0 have at least 5 articles`, function(){
-            return new Promise (function(resolve){
-                    loadFeed(0,resolve($('.entry').length));
-                }).then(function(length){
-                    expect(length).not.toBe(0);
-                });
-        });
-
-    });
-
 }());
