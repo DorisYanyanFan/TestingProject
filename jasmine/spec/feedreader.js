@@ -20,6 +20,7 @@ $(function() {
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
          * page?
+         * RSS Reeds test failed.
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -86,24 +87,21 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        var list = 0;
 
         beforeEach((done) => {
-            if (list < 4) {
-                loadFeed(list,done);
+                loadFeed(0,done);
             }
-        });
+        );
 
         it('at least one entry within container', function(){
             let length = $('.entry').length;
             expect(length).not.toBe(0);
-            list++;
         });
     });
 
 
     /* TODO: Write a new test suite named "New Feed Selection" */
-    describe('New Feed Selection', () => {
+    describe('New Feed Selection', function() {
 
       /* TODO: Write a test that ensures when a new feed is loaded
        * by the loadFeed function that the content actually changes.
@@ -115,15 +113,46 @@ $(function() {
         loadFeed(0);
         oldFeed = document.querySelector('.feed').innerHTML;
         loadFeed(1,done);
-        // loadFeed(0, function() {
-        //   oldFeed = document.querySelector('.feed').innerHTML;
-        //   loadFeed(1, done);
-        // });
       });
 
-      it('content actually changes', () => { //New Feed Selection content actually changes
+      it('content actually changes', () => {
         const newFeed = document.querySelector('.feed').innerHTML;
         expect(newFeed).not.toEqual(oldFeed);
       });
     });
+
+    describe('Feed-list', function(){
+
+
+        it(`all feed-list 3 have at least 5 articles`, function(){
+            return new Promise (function(resolve){
+                    loadFeed(3,resolve($('.entry').length));
+                }).then(function(length){
+                    expect(length).not.toBe(0);
+                });
+        });
+        it(`all feed-list 2 have at least 5 articles`, function(){
+            return new Promise (function(resolve){
+                    loadFeed(2,resolve($('.entry').length));
+                }).then(function(length){
+                    expect(length).not.toBe(0);
+                });
+        });
+        it(`all feed-list 1 have at least 5 articles`, function(){
+            return new Promise (function(resolve){
+                    loadFeed(1,resolve($('.entry').length));
+                }).then(function(length){
+                    expect(length).not.toBe(0);
+                });
+        });
+        it(`all feed-list 0 have at least 5 articles`, function(){
+            return new Promise (function(resolve){
+                    loadFeed(0,resolve($('.entry').length));
+                }).then(function(length){
+                    expect(length).not.toBe(0);
+                });
+        });
+
+    });
+
 }());
