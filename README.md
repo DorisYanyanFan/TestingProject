@@ -7,7 +7,8 @@ TestingProject/jasmine/spec/feedreader.js is updated according to the project re
 
 1. git clone https://github.com/DorisYanyanFan/TestingProject.git
 2. In the folder, open index.html to see the result.
-3. Changes is TestingProject/jasmine/spec/feedreader.js
+3. Changes is made in TestingProject/jasmine/spec/feedreader.js.
+4. In this project no extra build tools was added.
 
 # Contributing
 
